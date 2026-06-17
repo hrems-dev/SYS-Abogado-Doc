@@ -19,6 +19,17 @@ Este proyecto contiene la documentación del análisis del sistema utilizando mo
 - [Diagrama de Tiempos](./2-MODELO_UML/comportamiento/5-Tiempos/main.md)
 - [Diagrama de Comunicación](./2-MODELO_UML/comportamiento/6-Comunicacion/main.md)
 
+### Modelo UML - Estructural
+
+#### Diagramas Estructurales
+
+- [Diagrama de Clases](./2-MODELO_UML/estructural/1-Clases/main.md)
+- [Diagrama de Objetos](./2-MODELO_UML/estructural/2-objetos/main.md)
+- [Diagrama de Componentes](./2-MODELO_UML/estructural/3-componentes/main.md)
+- [Diagrama de Despliegue](./2-MODELO_UML/estructural/4-despliegue/main.md)
+- [Diagrama de Paquetes](./2-MODELO_UML/estructural/5-paquetes/main.md)
+- [Diagrama de Perfil](./2-MODELO_UML/estructural/6-perfil/main.md)
+
 ## Descripción
 
 Este repositorio organiza los diferentes modelos y diagramas utilizados para el análisis del sistema, permitiendo una comprensión clara de su estructura y comportamiento.
