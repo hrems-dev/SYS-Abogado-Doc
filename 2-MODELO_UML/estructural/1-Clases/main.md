@@ -1,5 +1,3 @@
-# Diagrama de Clases
-
 ## Descripción
 
 En esta sección se documentan los diagramas de clases que muestran la estructura estática del sistema, incluyendo clases, atributos, métodos y relaciones.
@@ -18,6 +16,6 @@ En esta sección se documentan los diagramas de clases que muestran la estructur
 
 - (Listar relaciones: herencia, composición, agregación)
 
-## Referencias
+## Nota
 
-- [Volver al modelo UML](../../README.md)
+- Este contenido se incluye dentro de `index.md` mediante Jekyll.

@@ -1,5 +1,3 @@
-# Diagrama de Estado
-
 ## Descripción
 
 En esta sección se documentan los diagramas de estado que representan los estados posibles de objetos y sus transiciones.
@@ -14,6 +12,6 @@ En esta sección se documentan los diagramas de estado que representan los estad
 
 - (Listar transiciones entre estados)
 
-## Referencias
+## Nota
 
-- [Volver al modelo UML](../../README.md)
+- Este contenido se incluye dentro de `index.md` mediante Jekyll.

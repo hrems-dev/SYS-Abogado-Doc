@@ -1,5 +1,3 @@
-# Diagrama de Objetos
-
 ## Descripción
 
 En esta sección se documentan los diagramas de objetos que muestran instancias específicas de las clases y sus relaciones en un momento dado.
@@ -18,6 +16,6 @@ En esta sección se documentan los diagramas de objetos que muestran instancias 
 
 - (Listar enlaces)
 
-## Referencias
+## Nota
 
-- [Volver al modelo UML](../../README.md)
+- Este contenido se incluye dentro de `index.md` mediante Jekyll.

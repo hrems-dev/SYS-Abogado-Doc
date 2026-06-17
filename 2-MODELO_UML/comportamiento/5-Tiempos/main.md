@@ -1,5 +1,3 @@
-# Diagrama de Tiempos
-
 ## Descripción
 
 En esta sección se documentan los diagramas de tiempos que muestran el comportamiento de objetos en intervalos de tiempo.
@@ -14,6 +12,6 @@ En esta sección se documentan los diagramas de tiempos que muestran el comporta
 
 - (Listar eventos)
 
-## Referencias
+## Nota
 
-- [Volver al modelo UML](../../README.md)
+- Este contenido se incluye dentro de `index.md` mediante Jekyll.

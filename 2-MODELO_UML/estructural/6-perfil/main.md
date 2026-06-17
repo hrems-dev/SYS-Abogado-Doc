@@ -1,5 +1,3 @@
-# Diagrama de Perfil
-
 ## Descripción
 
 En esta sección se documentan los diagramas de perfil que permiten extender UML con nuevos elementos específicos del dominio del proyecto.
@@ -18,6 +16,6 @@ En esta sección se documentan los diagramas de perfil que permiten extender UML
 
 - (Listar restricciones)
 
-## Referencias
+## Nota
 
-- [Volver al modelo UML](../../README.md)
+- Este contenido se incluye dentro de `index.md` mediante Jekyll.

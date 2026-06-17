@@ -30,6 +30,10 @@ Este proyecto contiene la documentación del análisis del sistema utilizando mo
 - [Diagrama de Paquetes](./2-MODELO_UML/estructural/5-paquetes/main.md)
 - [Diagrama de Perfil](./2-MODELO_UML/estructural/6-perfil/main.md)
 
+## Página Unificada
+
+- [Ver documentación unificada](./index.md)
+
 ## Descripción
 
 Este repositorio organiza los diferentes modelos y diagramas utilizados para el análisis del sistema, permitiendo una comprensión clara de su estructura y comportamiento.

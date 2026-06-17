@@ -1,5 +1,3 @@
-# Casos de Uso
-
 ## Descripción
 
 En esta sección se documentan los casos de uso del sistema, que representan las interacciones entre actores externos y el sistema.
@@ -14,6 +12,6 @@ En esta sección se documentan los casos de uso del sistema, que representan las
 
 - (Listar casos de uso)
 
-## Referencias
+## Nota
 
-- [Volver al modelo UML](../../README.md)
+- Este contenido se incluye dentro de `index.md` mediante Jekyll.

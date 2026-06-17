@@ -1,5 +1,3 @@
-# Diagrama de Comunicación
-
 ## Descripción
 
 En esta sección se documentan los diagramas de comunicación que muestran las interacciones entre objetos del sistema.
@@ -14,6 +12,6 @@ En esta sección se documentan los diagramas de comunicación que muestran las i
 
 - (Listar mensajes)
 
-## Referencias
+## Nota
 
-- [Volver al modelo UML](../../README.md)
+- Este contenido se incluye dentro de `index.md` mediante Jekyll.

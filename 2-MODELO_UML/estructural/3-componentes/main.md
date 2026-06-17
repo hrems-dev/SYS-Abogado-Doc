@@ -1,5 +1,3 @@
-# Diagrama de Componentes
-
 ## Descripción
 
 En esta sección se documentan los diagramas de componentes que muestran la estructura física del sistema y las dependencias entre componentes.
@@ -18,6 +16,6 @@ En esta sección se documentan los diagramas de componentes que muestran la estr
 
 - (Listar dependencias)
 
-## Referencias
+## Nota
 
-- [Volver al modelo UML](../../README.md)
+- Este contenido se incluye dentro de `index.md` mediante Jekyll.

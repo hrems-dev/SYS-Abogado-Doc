@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ page.title | default: site.title }}</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        line-height: 1.6;
+        margin: 1.5rem auto;
+        max-width: 920px;
+        padding: 0 1rem;
+        color: #222;
+      }
+      header h1 {
+        margin-bottom: 0.25rem;
+      }
+      header p {
+        margin-top: 0;
+        color: #555;
+      }
+      h1,
+      h2,
+      h3 {
+        color: #1a1a1a;
+      }
+      a {
+        color: #0366d6;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      hr {
+        margin: 2rem 0;
+        border-color: #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+      <p>Documentación UML generada con Jekyll e includes relativos.</p>
+    </header>
+    <main>{{ content }}</main>
+  </body>
+</html>

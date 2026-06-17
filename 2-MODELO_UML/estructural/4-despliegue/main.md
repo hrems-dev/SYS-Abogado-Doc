@@ -1,5 +1,3 @@
-# Diagrama de Despliegue
-
 ## Descripción
 
 En esta sección se documentan los diagramas de despliegue que muestran la arquitectura física del sistema y cómo se distribuyen los componentes en hardware.
@@ -18,6 +16,6 @@ En esta sección se documentan los diagramas de despliegue que muestran la arqui
 
 - (Listar conexiones entre nodos)
 
-## Referencias
+## Nota
 
-- [Volver al modelo UML](../../README.md)
+- Este contenido se incluye dentro de `index.md` mediante Jekyll.

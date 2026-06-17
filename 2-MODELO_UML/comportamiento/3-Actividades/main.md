@@ -1,5 +1,3 @@
-# Diagrama de Actividades
-
 ## Descripción
 
 En esta sección se documentan los diagramas de actividades que representan el flujo de trabajo y procesos del sistema.
@@ -14,6 +12,6 @@ En esta sección se documentan los diagramas de actividades que representan el f
 
 - (Listar actividades)
 
-## Referencias
+## Nota
 
-- [Volver al modelo UML](../../README.md)
+- Este contenido se incluye dentro de `index.md` mediante Jekyll.

@@ -1,5 +1,3 @@
-# Diagrama de Paquetes
-
 ## Descripción
 
 En esta sección se documentan los diagramas de paquetes que muestran la organización de clases en paquetes y las dependencias entre paquetes.
@@ -18,6 +16,6 @@ En esta sección se documentan los diagramas de paquetes que muestran la organiz
 
 - (Listar dependencias)
 
-## Referencias
+## Nota
 
-- [Volver al modelo UML](../../README.md)
+- Este contenido se incluye dentro de `index.md` mediante Jekyll.

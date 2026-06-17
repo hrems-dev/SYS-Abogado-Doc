@@ -1,5 +1,3 @@
-# Diagrama de Secuencia
-
 ## Descripción
 
 En esta sección se documentan los diagramas de secuencia que muestran la interacción entre objetos del sistema en el tiempo.
@@ -14,6 +12,6 @@ En esta sección se documentan los diagramas de secuencia que muestran la intera
 
 - (Listar actores y objetos)
 
-## Referencias
+## Nota
 
-- [Volver al modelo UML](../../README.md)
+- Este contenido se incluye dentro de `index.md` mediante Jekyll.
