@@ -56,3 +56,9 @@ title: Documentación UML
 ### Diagrama de Perfil
 
 {% include_relative 2-MODELO_UML/estructural/6-perfil/main.md %}
+
+## Patrones de Diseno
+
+### Patron Singleton
+
+{% include_relative 3-PATRONES_DISENO/1-singleton/main.md %}

@@ -1,0 +1,55 @@
+@startuml
+title Patron Singleton - Configuracion del Sistema Legal
+
+skinparam backgroundColor #1E1E1E
+skinparam defaultFontColor #F5C542
+skinparam ArrowColor #D4A017
+skinparam classFontColor #F5C542
+skinparam classBorderColor #D4A017
+skinparam classBackgroundColor #2B2B2B
+skinparam classHeaderBackgroundColor #1E1E1E
+
+class ConfiguracionSistemaLegal <<Singleton>> {
+    - instancia: ConfiguracionSistemaLegal
+    - horarioAtencion: String
+    - correoNotificaciones: String
+    - telefonoEmergencia: String
+    - maxDocumentosPorCaso: int
+    - areasLegales: List<String>
+    - ConfiguracionSistemaLegal()
+    + getInstancia(): ConfiguracionSistemaLegal
+    + getHorarioAtencion(): String
+    + getCorreoNotificaciones(): String
+    + getTelefonoEmergencia(): String
+    + getMaxDocumentosPorCaso(): int
+    + getAreasLegales(): List<String>
+    + esAreaLegalSoportada(area: String): boolean
+}
+
+class CitaService {
+    + programarCita(): void
+}
+
+class ConsultaService {
+    + registrarConsulta(): void
+}
+
+class CasoService {
+    + adjuntarDocumento(): void
+}
+
+class NotificacionService {
+    + enviarNotificacion(): void
+}
+
+CitaService ..> ConfiguracionSistemaLegal : consulta horario
+ConsultaService ..> ConfiguracionSistemaLegal : valida area legal
+CasoService ..> ConfiguracionSistemaLegal : valida limite documentos
+NotificacionService ..> ConfiguracionSistemaLegal : usa canales oficiales
+
+note right of ConfiguracionSistemaLegal
+Garantiza una unica instancia para
+parametros compartidos del sistema.
+end note
+
+@enduml
