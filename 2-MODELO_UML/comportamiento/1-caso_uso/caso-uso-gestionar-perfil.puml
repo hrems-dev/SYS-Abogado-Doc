@@ -1,0 +1,67 @@
+@startuml Modulo_06_Gestionar_Perfil
+title Sistema SYS-SISTEMA-ABOGADO\nUC-06: Gestionar Perfil
+
+left to right direction
+
+skinparam backgroundColor #1E1E1E
+skinparam packageStyle folder
+skinparam shadowing false
+skinparam actorStyle awesome
+
+skinparam package {
+    BackgroundColor #1E1E1E
+    BorderColor #D4A017
+    RoundColor #D4A017
+    RoundCorner 10
+}
+
+skinparam usecase {
+    BackgroundColor #2B2B2B
+    BorderColor #D4A017
+    FontColor #F5C542
+    ArrowColor #D4A017
+}
+
+skinparam actor {
+    FontColor #F5C542
+    BorderColor #D4A017
+}
+
+skinparam ArrowColor #D4A017
+skinparam defaultFontColor #F5C542
+
+actor "Cliente" as C
+actor "Administrador" as A
+
+package "Sistema SYS-SISTEMA-ABOGADO" {
+
+    usecase "Visualizar\n perfil" as UC1
+    usecase "Editar datos\n personales" as UC2
+    usecase "Cambiar\n contraseña" as UC3
+    usecase "Actualizar\n fotografía" as UC4
+    usecase "Validar\n información" as UC5
+    usecase "Administrar\n usuarios" as UC6
+
+}
+
+C --> UC1
+C --> UC2
+C --> UC3
+C --> UC4
+
+A --> UC6
+
+UC2 .> UC5 : <<include>>
+UC3 .> UC5 : <<include>>
+UC4 .> UC5 : <<include>>
+
+legend right
+  |<#D4A017> Actor Primario |
+  |<#F5C542> Casos de Uso |
+  |<#2B2B2B> Relación Include |
+  |-- Cliente: Usuario del sistema |
+  |-- Administrador: Gestor del sistema |
+endlegend
+
+
+@enduml

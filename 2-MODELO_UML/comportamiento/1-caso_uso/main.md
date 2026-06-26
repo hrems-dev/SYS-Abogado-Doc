@@ -1,17 +1,16 @@
-## Descripción
+# Casos de Uso
 
-En esta sección se documentan los casos de uso del sistema, que representan las interacciones entre actores externos y el sistema.
+Los diagramas de casos de uso describen las **funcionalidades** que el sistema ofrece a cada tipo de usuario.
 
-## Contenido
+## Módulos
 
-### Actores
+| Archivo | Módulo | Actores |
+|---------|--------|---------|
+| `caso-uso-area-cliente.puml` | Área Cliente | Cliente, Administrador |
+| `caso-uso-citas.puml` | Sistema de Citas | Cliente |
+| `caso-uso-consultas.puml` | Consulta Legal | Usuario |
+| `caso-uso-gestionar-perfil.puml` | Gestionar Perfil | Cliente, Administrador |
+| `caso-uso-publicacion.puml` | Publicaciones | Abogado |
+| `servicios_legales.puml` | Servicios Legales | Visitante, Cliente, Administrador, CMS |
 
-- (Listar actores del sistema)
-
-### Casos de Uso Principales
-
-- (Listar casos de uso)
-
-## Nota
-
-- Este contenido se incluye dentro de `index.md` mediante Jekyll.
+Todos los diagramas siguen el estilo visual oscuro con paleta de colores dorado (#D4A017) sobre fondo oscuro (#1E1E1E).

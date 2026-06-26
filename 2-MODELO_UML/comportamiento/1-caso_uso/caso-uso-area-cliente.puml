@@ -1,0 +1,71 @@
+@startuml Modulo_05_Area_Cliente
+title Sistema SYS-SISTEMA-ABOGADO\nUC-05: Área Cliente
+
+left to right direction
+
+skinparam backgroundColor #1E1E1E
+skinparam packageStyle folder
+skinparam shadowing false
+skinparam actorStyle awesome
+
+skinparam package {
+    BackgroundColor #1E1E1E
+    BorderColor #D4A017
+    RoundColor #D4A017
+    RoundCorner 10
+}
+
+skinparam usecase {
+    BackgroundColor #2B2B2B
+    BorderColor #D4A017
+    FontColor #F5C542
+    ArrowColor #D4A017
+}
+
+skinparam actor {
+    FontColor #F5C542
+    BorderColor #D4A017
+}
+
+skinparam ArrowColor #D4A017
+skinparam defaultFontColor #F5C542
+
+actor "Cliente" as C
+actor "Administrador" as A
+
+package "Sistema SYS-SISTEMA-ABOGADO" {
+
+    usecase "Iniciar sesión\n de forma segura" as UC1
+    usecase "Ver estado\n de su caso" as UC2
+    usecase "Consultar documentos\n del caso" as UC3
+    usecase "Subir documentos\n requeridos" as UC4
+    usecase "Comunicarse con\n el abogado" as UC5
+    usecase "Ver historial\n de citas" as UC6
+    usecase "Programar nueva cita\n desde portal" as UC7
+    usecase "Gestionar documentos\n del cliente" as UC8
+    usecase "Actualizar estado\n del caso" as UC9
+
+}
+
+C --> UC1
+C --> UC3
+C --> UC4
+C --> UC5
+C --> UC6
+C --> UC7
+
+A --> UC8
+A --> UC9
+
+UC1 .> UC2 : <<include>>
+UC5 .> UC9 : <<include>>
+
+legend right
+  |<#D4A017> Actor Primario |
+  |<#F5C542> Casos de Uso |
+  |<#2B2B2B> Relación Include |
+  |-- Cliente: Usuario del sistema |
+  |-- Administrador: Gestor del sistema |
+endlegend
+
+@enduml

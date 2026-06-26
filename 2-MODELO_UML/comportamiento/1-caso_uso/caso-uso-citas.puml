@@ -1,0 +1,51 @@
+@startuml
+
+
+skinparam backgroundColor #1E1E1E
+skinparam packageStyle folder
+skinparam shadowing false
+skinparam actorStyle awesome
+
+skinparam package {
+    BackgroundColor #1E1E1E
+    BorderColor #D4A017
+    RoundCorner 10
+}
+
+skinparam usecase {
+    BackgroundColor #2B2B2B
+    BorderColor #D4A017
+    FontColor #F5C542
+    ArrowColor #D4A017
+}
+skinparam ArrowColor #D4A017
+skinparam defaultFontColor #F5C542
+left to right direction
+
+actor Cliente
+
+rectangle "Sistema de Citas" {
+
+  usecase "Iniciar Sesión" as UC1
+  usecase "Seleccionar Fecha" as UC2
+  usecase "Elegir Modalidad" as UC3
+  usecase "Confirmar Cita" as UC4
+  usecase "Visualizar Comprobante" as UC5
+
+}
+
+Cliente -- UC1
+Cliente -- UC2
+Cliente -- UC3
+Cliente -- UC4
+Cliente -- UC5
+
+legend right
+  |<#D4A017> Proceso |
+  |<#F5C542> Interacción Cliente |
+  |UC1 - UC5| Pasos del Sistema |
+  |-- Flujo completo de agendamiento |
+  |-- Confirmación automática |
+endlegend
+
+@enduml
