@@ -1,0 +1,19 @@
+@startuml
+title Tiempo - Publicaciones
+
+robust Abogado
+robust Sistema
+
+@0
+Abogado is Creando
+
+@10
+Sistema is ProcesandoContenido
+
+@20
+Abogado is RevisandoVistaPrevia
+
+@30
+Sistema is Publicando
+
+@enduml

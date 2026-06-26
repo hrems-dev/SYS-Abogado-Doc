@@ -1,0 +1,20 @@
+@startuml
+title Tiempo - Sistema Web Legal
+
+robust Visitante
+robust Sistema
+robust Admin
+
+@0
+Visitante is Navegando
+
+@10
+Sistema is MostrandoServicios
+
+@20
+Visitante is SolicitandoCita
+
+@30
+Admin is GestionandoCita
+
+@enduml

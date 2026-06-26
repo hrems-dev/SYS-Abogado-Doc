@@ -1,0 +1,22 @@
+@startuml
+title Tiempo - Sistema de Citas
+
+robust Cliente
+robust Sistema
+
+@0
+Cliente is Login
+
+@5
+Cliente is SeleccionandoFecha
+
+@10
+Sistema is ValidandoDisponibilidad
+
+@15
+Cliente is Confirmando
+
+@20
+Sistema is RegistrandoCita
+
+@enduml
