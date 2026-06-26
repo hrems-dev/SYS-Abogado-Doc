@@ -1,0 +1,11 @@
+@startuml
+title Estado - Sistema de Citas
+
+[*] --> Disponible
+Disponible --> SeleccionandoFecha
+SeleccionandoFecha --> Confirmando
+Confirmando --> CitaRegistrada
+CitaRegistrada --> Finalizado
+Finalizado --> [*]
+
+@enduml

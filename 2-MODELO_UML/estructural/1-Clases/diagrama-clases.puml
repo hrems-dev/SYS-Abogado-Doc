@@ -1,0 +1,150 @@
+@startuml
+title Diagrama de Clases - Sistema de Gestión Legal
+
+skinparam backgroundColor #1E1E1E
+skinparam defaultFontColor #F5C542
+skinparam ArrowColor #D4A017
+skinparam classFontColor #F5C542
+skinparam classBorderColor #D4A017
+skinparam classBackgroundColor #2B2B2B
+skinparam classHeaderBackgroundColor #1E1E1E
+
+abstract class Usuario {
+    - id: Long
+    - nombre: String
+    - email: String
+    - password: String
+    - telefono: String
+    - fechaRegistro: Date
+    - activo: Boolean
+    + login(email: String, password: String): Token
+    + logout(): void
+    + actualizarDatos(datos: Map): void
+}
+
+class Cliente {
+    - direccion: String
+    - tipoDocumento: String
+    - numeroDocumento: String
+    + solicitarCita(fecha: Date, modalidad: String): Cita
+    + consultarCaso(idCaso: Long): Caso
+    + subirDocumento(archivo: File): Documento
+}
+
+class Abogado {
+    - especialidad: String
+    - numeroColegiatura: String
+    - horarioAtencion: String
+    + crearPublicacion(contenido: String): Publicacion
+    + atenderConsulta(idConsulta: Long): void
+    + actualizarCaso(idCaso: Long, estado: String): void
+}
+
+class Administrador {
+    - nivelAcceso: String
+    - areaAsignada: String
+    + gestionarUsuarios(): List<Usuario>
+    + gestionarContenido(): void
+    + configurarSistema(): void
+}
+
+class Caso {
+    - id: Long
+    - titulo: String
+    - descripcion: String
+    - fechaApertura: Date
+    - estado: String
+    - prioridad: String
+    + asignarAbogado(abogado: Abogado): void
+    + actualizarEstado(nuevoEstado: String): void
+    + agregarDocumento(documento: Documento): void
+}
+
+class Cita {
+    - id: Long
+    - fechaHora: DateTime
+    - modalidad: String
+    - estado: String
+    - motivo: String
+    + confirmar(): void
+    + reprogramar(nuevaFecha: DateTime): void
+    + cancelar(): void
+}
+
+class Consulta {
+    - id: Long
+    - descripcion: String
+    - areaLegal: String
+    - fechaSolicitud: Date
+    - estado: String
+    - respuesta: String
+    + asignarAbogado(): void
+    + responder(respuesta: String): void
+    + cerrar(): void
+}
+
+class Publicacion {
+    - id: Long
+    - titulo: String
+    - contenido: String
+    - imagenUrl: String
+    - fechaPublicacion: Date
+    - estado: String
+    - tipo: String
+    + publicar(): void
+    + editar(nuevoContenido: String): void
+    + archivar(): void
+}
+
+class Documento {
+    - id: Long
+    - nombre: String
+    - tipoArchivo: String
+    - url: String
+    - fechaSubida: Date
+    - tamaño: Long
+    + descargar(): File
+    + eliminar(): void
+}
+
+class Notificacion {
+    - id: Long
+    - mensaje: String
+    - tipo: String
+    - fechaEnvio: Date
+    - leido: Boolean
+    + marcarComoLeido(): void
+    + enviar(): void
+}
+
+class Token {
+    - valor: String
+    - fechaExpiracion: Date
+    - tipo: String
+    + validar(): Boolean
+    + renovar(): Token
+}
+
+Usuario <|-- Cliente
+Usuario <|-- Abogado
+Usuario <|-- Administrador
+
+Cliente "1" --> "0..*" Cita : solicita
+Cliente "1" --> "0..*" Caso : posee
+Cliente "1" --> "0..*" Consulta : realiza
+
+Abogado "1" --> "0..*" Caso : atiende
+Abogado "1" --> "0..*" Consulta : resuelve
+Abogado "1" --> "0..*" Publicacion : crea
+
+Caso "1" --> "0..*" Documento : contiene
+Caso "1" --> "0..*" Cita : agenda
+
+Usuario "1" --> "0..*" Notificacion : recibe
+Usuario "1" --> "1" Token : posee
+
+note top of Usuario : Clase base para todos los usuarios del sistema
+note left of Caso : Representa un caso legal\ncon su documentación
+note right of Cita : Agendada por el cliente\ny gestionada por el admin
+
+@enduml

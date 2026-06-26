@@ -1,0 +1,11 @@
+@startuml
+title Estado - Consulta Legal
+
+[*] --> NuevaSolicitud
+NuevaSolicitud --> EnRevision
+EnRevision --> Asignada
+Asignada --> Respondida
+Respondida --> Cerrada
+Cerrada --> [*]
+
+@enduml

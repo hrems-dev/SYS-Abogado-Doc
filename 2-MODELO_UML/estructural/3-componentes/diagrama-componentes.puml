@@ -1,0 +1,70 @@
+@startuml
+title Diagrama de Componentes - Arquitectura de Software
+
+skinparam backgroundColor #1E1E1E
+skinparam defaultFontColor #F5C542
+skinparam ArrowColor #D4A017
+skinparam componentFontColor #F5C542
+skinparam componentBorderColor #D4A017
+skinparam componentBackgroundColor #2B2B2B
+
+package "Capa Presentación" {
+    [Frontend Web] as FE
+    [Módulo Cliente] as MC
+    [Módulo Admin] as MA
+}
+
+package "Capa de Servicios" {
+    [API Gateway] as GW
+
+    package "Microservicios" {
+        [Servicio Autenticación] as SA
+        [Servicio Citas] as SC
+        [Servicio Consultas] as SCon
+        [Servicio Casos] as SCas
+        [Servicio Perfil] as SP
+        [Servicio Publicaciones] as SPub
+        [Servicio Notificaciones] as SN
+    }
+}
+
+package "Capa de Datos" {
+    database "Base de Datos" as DB
+    [Repositorio Usuarios] as RU
+    [Repositorio Citas] as RC
+    [Repositorio Casos] as RCa
+    [Repositorio Publicaciones] as RP
+}
+
+package "Capa de Integración" {
+    [Cliente SMS] as SMS
+    [Cliente Email] as EM
+    [Cliente Pago] as PAGO
+}
+
+FE --> GW : HTTP/REST
+MC --> FE
+MA --> FE
+
+GW --> SA : /api/auth/**
+GW --> SC : /api/citas/**
+GW --> SCon : /api/consultas/**
+GW --> SCas : /api/casos/**
+GW --> SP : /api/perfil/**
+GW --> SPub : /api/publicaciones/**
+GW --> SN : /api/notificaciones/**
+
+SA --> RU : CRUD usuarios
+SC --> RC : CRUD citas
+SCas --> RCa : CRUD casos
+SPub --> RP : CRUD publicaciones
+
+RU --> DB : JDBC
+RC --> DB : JDBC
+RCa --> DB : JDBC
+RP --> DB : JDBC
+
+SN --> SMS : API REST
+SN --> EM : SMTP
+
+@enduml

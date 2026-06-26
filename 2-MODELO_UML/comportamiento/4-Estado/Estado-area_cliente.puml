@@ -1,0 +1,17 @@
+@startuml
+title Estado - Área Cliente
+
+skinparam backgroundColor #1E1E1E
+skinparam defaultFontColor #F5C542
+skinparam ArrowColor #D4A017
+
+[*] --> Desconectado
+Desconectado --> Autenticando
+Autenticando --> SesionActiva
+SesionActiva --> ConsultandoCaso
+ConsultandoCaso --> SubiendoDocumento
+SubiendoDocumento --> Mensajeria
+Mensajeria --> CerrandoSesion
+CerrandoSesion --> [*]
+
+@enduml
