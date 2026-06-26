@@ -1,0 +1,56 @@
+@startuml
+
+skinparam backgroundColor #1E1E1E
+skinparam packageStyle folder
+skinparam shadowing false
+skinparam actorStyle awesome
+
+skinparam sequence {
+    ArrowColor #D4A017
+    LifeLineBorderColor #D4A017
+    LifeLineBackgroundColor #2B2B2B
+    ParticipantBorderColor #D4A017
+    ParticipantBackgroundColor #2B2B2B
+    ParticipantFontColor #F5C542
+    ActorBorderColor #D4A017
+    ActorBackgroundColor #2B2B2B
+    ActorFontColor #F5C542
+}
+
+skinparam ArrowColor #D4A017
+skinparam defaultFontColor #F5C542
+
+actor Abogado
+participant Frontend
+participant "API Gateway" as API
+participant "Publicaciones Service" as Publicaciones
+database "DB Publicaciones" as DB
+
+Abogado -> Frontend : Crear publicación
+Frontend -> API : POST /publicaciones
+API -> Publicaciones : Registrar publicación
+
+Abogado -> Frontend : Escribir texto
+Abogado -> Frontend : Subir imagen
+
+Frontend -> API : Enviar texto e imagen
+API -> Publicaciones : Procesar contenido
+
+Publicaciones -> DB : Guardar publicación
+DB --> Publicaciones : OK
+
+Publicaciones --> API : Publicación registrada
+API --> Frontend : Mostrar vista previa
+
+Abogado -> Frontend : Confirmar publicación
+Frontend -> API : Publicar contenido
+
+API -> Publicaciones : Actualizar estado
+Publicaciones -> DB : Publicación activa
+DB --> Publicaciones : OK
+
+Publicaciones --> API : Publicación publicada
+API --> Frontend : Mostrar confirmación
+Frontend --> Abogado : Publicación exitosa
+
+@enduml

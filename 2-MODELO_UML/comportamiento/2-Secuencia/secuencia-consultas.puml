@@ -1,0 +1,39 @@
+@startuml
+
+skinparam backgroundColor #1E1E1E
+skinparam packageStyle folder
+skinparam shadowing false
+skinparam actorStyle awesome
+
+skinparam package {
+    BackgroundColor #1E1E1E
+    BorderColor #D4A017
+    RoundCorner 10
+}
+
+skinparam usecase {
+    BackgroundColor #2B2B2B
+    BorderColor #D4A017
+    FontColor #F5C542
+    ArrowColor #D4A017
+}
+
+skinparam ArrowColor #D4A017
+skinparam defaultFontColor #F5C542
+
+actor Usuario
+participant Frontend
+participant "API Gateway" as API
+participant "Consultas Service" as Consultas
+database "DB Consultas" as DB
+
+Usuario -> Frontend : Llena formulario
+Frontend -> API : POST /consultas
+API -> Consultas : Registrar consulta
+Consultas -> DB : Guardar consulta
+DB --> Consultas : OK
+Consultas --> API : Consulta registrada
+API --> Frontend : Respuesta exitosa
+Frontend --> Usuario : Confirmación
+
+@enduml

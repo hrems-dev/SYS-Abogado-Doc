@@ -1,0 +1,62 @@
+@startuml
+
+skinparam backgroundColor #1E1E1E
+skinparam shadowing false
+skinparam sequence {
+    ArrowColor #D4A017
+    LifeLineBorderColor #D4A017
+    LifeLineBackgroundColor #2B2B2B
+    ParticipantBorderColor #D4A017
+    ParticipantBackgroundColor #2B2B2B
+    ParticipantFontColor #F5C542
+    ActorBorderColor #D4A017
+    ActorFontColor #F5C542
+    ActorBackgroundColor #1E1E1E
+}
+
+skinparam defaultFontColor #F5C542
+
+actor Visitante
+participant "Sistema Web" as SW
+participant "Módulo de Citas" as MC
+participant "Base de Datos" as BD
+participant "Administrador" as Admin
+
+== Solicitud de cita legal ==
+
+Visitante -> SW : Accede al sitio web
+SW -> Visitante : Muestra información de servicios
+
+Visitante -> SW : Selecciona "Solicitar cita"
+SW -> Visitante : Muestra formulario de cita
+
+Visitante -> SW : Ingresa datos y envía solicitud
+SW -> MC : Validar datos de la cita
+
+MC -> BD : Guardar solicitud
+BD --> MC : Confirmación de registro
+
+MC --> SW : Cita registrada correctamente
+SW --> Visitante : Mostrar mensaje de confirmación
+
+== Gestión de citas ==
+
+Admin -> SW : Accede al panel administrativo
+SW -> MC : Solicitar listado de citas
+
+MC -> BD : Consultar citas registradas
+BD --> MC : Lista de citas
+
+MC --> SW : Mostrar citas
+SW --> Admin : Panel de gestión actualizado
+
+Admin -> SW : Aprobar/Reprogramar cita
+SW -> MC : Actualizar estado de cita
+
+MC -> BD : Guardar cambios
+BD --> MC : Confirmación
+
+MC --> SW : Estado actualizado
+SW --> Admin : Notificación de éxito
+
+@enduml
