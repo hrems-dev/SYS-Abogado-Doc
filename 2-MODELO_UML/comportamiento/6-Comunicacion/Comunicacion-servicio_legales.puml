@@ -1,0 +1,24 @@
+@startuml
+allowmixing
+
+title Comunicación - Sistema Web Legal
+
+object Visitante
+object SistemaWeb
+object ModuloCitas
+database DB
+object Admin
+
+Visitante -> SistemaWeb : 1 Solicitar cita
+SistemaWeb -> ModuloCitas : 2 Registrar
+ModuloCitas -> DB : 3 Guardar
+DB --> ModuloCitas : 4 OK
+
+Admin -> SistemaWeb : 5 Gestionar citas
+SistemaWeb -> ModuloCitas : 6 Actualizar estado
+ModuloCitas -> DB : 7 Guardar cambios
+DB --> ModuloCitas : 8 Confirmación
+ModuloCitas --> SistemaWeb : 9 Estado actualizado
+SistemaWeb --> Admin : 10 Notificación
+
+@enduml
