@@ -9,14 +9,43 @@ En esta sección se documentan los diagramas de paquetes que muestran la organiz
 ### Paquetes Definidos
 
 - (Listar paquetes)
+- com.practica.sysabogado: paquete raiz del sistema.
+- presentation: capa de controladores que expone las funcionalidades del sistema.
+- service: capa de servicios con la logica de negocio.
+- repository: capa de acceso a datos.
+- model: capa de entidades del dominio.
+- security: componentes de autenticacion, autorizacion y configuracion de seguridad.
+- config: configuraciones generales de la aplicacion.
+- dto: objetos de transferencia de datos para solicitudes y respuestas.
+- exception: manejo centralizado de errores y excepciones.
+- util: utilidades y constantes compartidas.
 
 ### Elementos en Paquetes
 
 - (Listar elementos)
+- presentation: ControladorAuth, ControladorCitas, ControladorCasos, ControladorPerfil, ControladorPublicaciones y ControladorAdmin.
+- service: AuthService, CitaService, CasoService, ConsultaService, PerfilService, PublicacionService y NotificacionService.
+- repository: UsuarioRepository, CitaRepository, CasoRepository, ConsultaRepository, PublicacionRepository y DocumentoRepository.
+- model: Usuario, Cliente, Abogado, Administrador, Cita, Caso, Consulta, Publicacion, Documento y Notificacion.
+- security: JwtProvider, JwtFilter, UserDetailsServiceImpl y SecurityConfig.
+- config: AppConfig, CorsConfig, SwaggerConfig y WebClientConfig.
+- dto: LoginRequest, LoginResponse, CitaRequest, CasoResponse y PerfilResponse.
+- exception: GlobalExceptionHandler, ResourceNotFoundException y BadRequestException.
+- util: DateUtils, FileUtils y Constants.
 
 ### Dependencias entre Paquetes
 
 - (Listar dependencias)
+- presentation depende de service.
+- service utiliza repository.
+- service mapea model.
+- repository persiste model.
+- security referencia model.
+- dto transfiere model.
+- presentation expone dto.
+- presentation maneja exception.
+- service lanza exception.
+- security configura config.
 
 ## Nota
 
