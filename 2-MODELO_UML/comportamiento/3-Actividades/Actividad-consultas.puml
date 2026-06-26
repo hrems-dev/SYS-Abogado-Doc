@@ -1,0 +1,13 @@
+@startuml
+title Actividades - Consulta Legal
+
+start
+
+:Solicitar consulta;
+:Describir caso;
+:Seleccionar área legal;
+:Enviar solicitud;
+:Recibir confirmación;
+
+stop
+@enduml
