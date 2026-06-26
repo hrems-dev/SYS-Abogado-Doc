@@ -1,0 +1,31 @@
+@startuml
+title SYS-SISTEMA-ABOGADO - Objeto: Citas
+
+skinparam backgroundColor #1E1E1E
+skinparam ObjectBackgroundColor #2B2B2B
+skinparam ObjectBorderColor #D4A017
+skinparam ObjectFontColor #F5C542
+skinparam ArrowColor #D4A017
+skinparam defaultFontColor #F5C542
+
+object "Cliente" as cliente {
+  id = 1
+  nombre = "Juan Pérez"
+}
+
+object "Cita" as cita {
+  id = 15
+  fecha = "20/06/2026"
+  hora = "10:00"
+  estado = "Pendiente"
+}
+
+object "Abogado" as abogado {
+  id = 8
+  nombre = "Dr. Carlos Soto"
+}
+
+cliente -- cita
+abogado -- cita
+
+@enduml
