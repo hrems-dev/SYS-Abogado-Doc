@@ -1,0 +1,27 @@
+@startuml
+title Actividades - Área Cliente
+
+skinparam backgroundColor #1E1E1E
+skinparam ArrowColor #D4A017
+skinparam defaultFontColor #F5C542
+
+start
+
+:Iniciar sesión;
+
+if (¿Acceso válido?) then (Sí)
+
+:Ver estado del caso;
+:Consultar documentos;
+:Subir documentos;
+:Enviar mensaje al abogado;
+:Programar cita;
+
+else (No)
+
+:Mostrar error;
+
+endif
+
+stop
+@enduml

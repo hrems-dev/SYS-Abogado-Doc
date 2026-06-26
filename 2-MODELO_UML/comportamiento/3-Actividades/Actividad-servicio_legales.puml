@@ -1,0 +1,13 @@
+@startuml
+title Actividades - Sistema Web Legal
+
+start
+
+:Consultar información;
+:Solicitar cita;
+:Acceder área cliente;
+:Ver noticias;
+:Gestionar contenido;
+
+stop
+@enduml

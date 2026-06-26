@@ -1,0 +1,13 @@
+@startuml
+title Actividades - Sistema de Citas
+
+start
+
+:Iniciar sesión;
+:Seleccionar fecha;
+:Elegir modalidad;
+:Confirmar cita;
+:Generar comprobante;
+
+stop
+@enduml

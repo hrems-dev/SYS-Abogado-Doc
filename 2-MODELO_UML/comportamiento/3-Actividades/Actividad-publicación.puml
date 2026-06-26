@@ -1,0 +1,14 @@
+@startuml
+title Actividades - Publicaciones
+
+start
+
+:Iniciar sesión;
+:Crear publicación;
+:Escribir texto;
+:Subir imagen;
+:Vista previa;
+:Publicar contenido;
+
+stop
+@enduml

@@ -1,0 +1,62 @@
+@startuml
+title Actividades - Gestionar Perfil
+
+skinparam backgroundColor #1E1E1E
+skinparam ArrowColor #D4A017
+skinparam defaultFontColor #F5C542
+
+start
+
+:Iniciar sesión;
+
+if (¿Tipo de usuario?) then (Cliente)
+
+  :Visualizar perfil;
+
+  if (¿Desea editar?) then (Sí - Datos personales)
+    :Editar datos personales;
+    :Validar información;
+    if (¿Datos válidos?) then (Sí)
+      :Guardar cambios;
+    else (No)
+      :Mostrar error de validación;
+    endif
+  elseif (Sí - Contraseña)
+    :Cambiar contraseña;
+    :Ingresar contraseña actual;
+    :Ingresar nueva contraseña;
+    :Confirmar nueva contraseña;
+    if (¿Contraseñas coinciden?) then (Sí)
+      :Actualizar contraseña;
+    else (No)
+      :Mostrar error;
+    endif
+  elseif (Sí - Fotografía)
+    :Actualizar fotografía;
+    :Seleccionar imagen;
+    :Validar formato y tamaño;
+    if (¿Imagen válida?) then (Sí)
+      :Subir y guardar fotografía;
+    else (No)
+      :Mostrar error de formato;
+    endif
+  else (No)
+    :Cerrar sesión;
+  endif
+
+else (Administrador)
+  :Acceder a panel de administración;
+  :Listar usuarios del sistema;
+  :Seleccionar usuario;
+
+  if (¿Acción?) then (Editar)
+    :Modificar datos del usuario;
+  else (Eliminar)
+    :Desactivar cuenta de usuario;
+  endif
+
+  :Confirmar operación;
+endif
+
+stop
+@enduml
