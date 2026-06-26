@@ -1,0 +1,19 @@
+@startuml
+allowmixing
+
+title Comunicación - Consulta Legal
+
+object Usuario
+object Frontend
+object API
+object Consultas
+database DB
+
+Usuario -> Frontend : 1 Completar formulario
+Frontend -> API : 2 Enviar consulta
+API -> Consultas : 3 Registrar
+Consultas -> DB : 4 Guardar
+DB --> Consultas : 5 OK
+Consultas --> Frontend : 6 Confirmación
+
+@enduml

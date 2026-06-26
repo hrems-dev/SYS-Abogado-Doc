@@ -1,0 +1,25 @@
+@startuml
+allowmixing
+
+title Comunicación - Área Cliente
+
+object Cliente
+object Frontend
+object API
+object Sistema
+database DB
+
+Cliente -> Frontend : 1 Login
+Frontend -> API : 2 Validar
+API -> DB : 3 Consultar usuario
+DB --> API : 4 OK
+
+Cliente -> Frontend : 5 Ver caso
+Frontend -> Sistema : 6 Solicitar estado
+Sistema -> DB : 7 Obtener datos
+DB --> Sistema : 8 Resultado
+
+Sistema --> Frontend : 9 Mostrar información
+Frontend --> Cliente : 10 Estado actualizado
+
+@enduml

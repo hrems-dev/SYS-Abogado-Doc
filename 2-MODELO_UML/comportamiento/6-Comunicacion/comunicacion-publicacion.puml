@@ -1,0 +1,20 @@
+@startuml
+allowmixing
+
+title Comunicación - Publicaciones
+
+object Abogado
+object Frontend
+object API
+object Publicaciones
+database DB
+
+Abogado -> Frontend : 1 Crear publicación
+Frontend -> API : 2 Enviar contenido
+API -> Publicaciones : 3 Procesar
+Publicaciones -> DB : 4 Guardar
+DB --> Publicaciones : 5 OK
+Publicaciones --> Frontend : 6 Vista previa
+Frontend --> Abogado : 7 Confirmación
+
+@enduml
