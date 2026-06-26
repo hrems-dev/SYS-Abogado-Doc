@@ -1,0 +1,69 @@
+@startuml Diagrama
+title Diagrama de Despliegue - Infraestructura del Sistema
+
+skinparam backgroundColor #1E1E1E
+skinparam defaultFontColor #F5C542
+skinparam ArrowColor #D4A017
+skinparam nodeFontColor #F5C542
+skinparam nodeBorderColor #D4A017
+skinparam nodeBackgroundColor #2B2B2B
+
+actor "Cliente" as CL
+actor "Abogado" as AB
+actor "Administrador" as AD
+
+node "Dispositivo Cliente" as Browser {
+    [Navegador Web] as NAV
+}
+
+node "Dispositivo Móvil" as Mobile {
+    [App Mobile] as APP
+}
+
+node "Servidor Web" as WebServer {
+    [Servidor Nginx] as NGINX
+    [Aplicación Web React] as REACT
+}
+
+node "Servidor API" as APIServer {
+    [API Gateway] as GW
+    [Auth Service] as AUTH
+    [Citas Service] as CITAS
+    [Consultas Service] as CONSUL
+    [Casos Service] as CASOS
+    [Perfil Service] as PERFIL
+    [Publicaciones Service] as PUB
+}
+
+node "Servidor Base de Datos" as DBServer {
+    database "PostgreSQL" as DB
+    [Balanceador de Conexiones] as PGBOUNCER
+}
+
+node "Servidor de Archivos" as FileServer {
+    [Almacenamiento S3] as S3
+    [CDN] as CDN
+}
+
+node "Servicios Externos" as Ext {
+    [Gateway SMS] as SMS
+    [Servidor SMTP] as SMTP
+}
+
+CL --> Browser : HTTPS
+AB --> Browser : HTTPS
+AD --> Browser : HTTPS
+CL --> Mobile : HTTPS
+
+Browser --> WebServer : HTTPS
+Mobile --> WebServer : HTTPS
+
+WebServer --> APIServer : HTTP Interno
+APIServer --> DBServer : JDBC (Puerto 5432)
+APIServer --> FileServer : API REST
+APIServer --> Ext : API Externa
+
+DBServer --> PGBOUNCER
+PGBOUNCER --> DB
+
+@enduml
