@@ -1,0 +1,49 @@
+@startuml
+skinparam backgroundColor #1E1E1E
+skinparam packageStyle folder
+skinparam shadowing false
+skinparam actorStyle awesome
+
+skinparam package {
+    BackgroundColor #1E1E1E
+    BorderColor #D4A017
+    RoundCorner 10
+}
+
+skinparam usecase {
+    BackgroundColor #2B2B2B
+    BorderColor #D4A017
+    FontColor #F5C542
+    ArrowColor #D4A017
+}
+skinparam ArrowColor #D4A017
+skinparam defaultFontColor #F5C542
+left to right direction
+
+actor Usuario
+
+rectangle "Sistema Legal" {
+
+  usecase "Solicitar Consulta" as UC1
+  usecase "Describir Caso Legal" as UC2
+  usecase "Seleccionar Área Legal" as UC3
+  usecase "Enviar Solicitud" as UC4
+  usecase "Recibir Confirmación" as UC5
+
+}
+
+Usuario -- UC1
+Usuario -- UC2
+Usuario -- UC3
+Usuario -- UC4
+Usuario -- UC5
+
+legend right
+  |<#D4A017> Área Legal |
+  |<#F5C542> Solicitud |
+  |UC1 - UC5| Etapas del Proceso |
+  |-- Consulta especializada |
+  |-- Confirmación de área legal |
+endlegend
+
+@enduml

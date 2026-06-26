@@ -1,0 +1,71 @@
+@startuml
+
+skinparam backgroundColor #1E1E1E
+skinparam packageStyle folder
+skinparam shadowing false
+skinparam actorStyle awesome
+
+skinparam package {
+    BackgroundColor #1E1E1E
+    BorderColor #D4A017
+    RoundCorner 10
+}
+
+skinparam usecase {
+    BackgroundColor #2B2B2B
+    BorderColor #D4A017
+    FontColor #F5C542
+    ArrowColor #D4A017
+}
+
+skinparam actor {
+    FontColor #F5C542
+    BorderColor #D4A017
+}
+
+skinparam ArrowColor #D4A017
+skinparam defaultFontColor #F5C542
+
+left to right direction
+
+actor Visitante
+actor Cliente
+actor Administrador
+actor "Sistema CMS" as CMS
+
+package "Sistema Web de Servicios Legales" {
+
+  (Consultar información) as UC1
+  (Solicitar cita) as UC2
+  (Gestionar citas) as UC3
+  (Área cliente) as UC4
+  (Recursos educativos) as UC5
+  (Noticias y eventos) as UC6
+  (Gestión de contenido) as UC7
+
+}
+
+Visitante --> UC1
+Visitante --> UC2
+Visitante --> UC5
+Visitante --> UC6
+
+Cliente --> UC3
+Cliente --> UC4
+
+Administrador --> UC3
+Administrador --> UC7
+Administrador --> UC6
+
+CMS --> UC7
+
+legend right
+  |<#D4A017> Actores del Sistema |
+  |<#F5C542> Funcionalidades |
+  |Visitante| Acceso público |
+  |Cliente| Acceso registrado |
+  |Administrador| Control total |
+  |CMS| Gestión de contenido |
+endlegend
+
+@enduml
