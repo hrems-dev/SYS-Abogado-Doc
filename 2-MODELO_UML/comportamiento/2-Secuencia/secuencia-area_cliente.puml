@@ -1,0 +1,103 @@
+@startuml Modulo_05_Area_Cliente_Secuencia
+title Sistema SYS-SISTEMA-ABOGADO\nDiagrama de Secuencia - Área Cliente
+
+skinparam backgroundColor #1E1E1E
+skinparam shadowing false
+
+skinparam sequence {
+    ArrowColor #D4A017
+    LifeLineBorderColor #D4A017
+    LifeLineBackgroundColor #2B2B2B
+    ParticipantBorderColor #D4A017
+    ParticipantBackgroundColor #2B2B2B
+    ParticipantFontColor #F5C542
+    ActorBorderColor #D4A017
+    ActorBackgroundColor #1E1E1E
+    ActorFontColor #F5C542
+}
+
+skinparam defaultFontColor #F5C542
+
+actor Cliente
+actor Administrador
+
+participant "Portal Cliente" as PC
+participant "Sistema de Autenticación" as SA
+participant "Gestión de Casos" as GC
+participant "Gestión de Documentos" as GD
+participant "Base de Datos" as BD
+
+== Inicio de sesión ==
+
+Cliente -> PC : Ingresa usuario y contraseña
+PC -> SA : Validar credenciales
+
+SA -> BD : Consultar datos del usuario
+BD --> SA : Datos válidos
+
+SA --> PC : Acceso autorizado
+PC --> Cliente : Mostrar panel del cliente
+
+== Consulta de estado del caso ==
+
+Cliente -> PC : Solicita estado del caso
+PC -> GC : Obtener información del caso
+
+GC -> BD : Consultar estado actual
+BD --> GC : Estado del caso
+
+GC --> PC : Datos del caso
+PC --> Cliente : Mostrar estado actualizado
+
+== Consulta y subida de documentos ==
+
+Cliente -> PC : Solicita documentos del caso
+PC -> GD : Consultar documentos
+
+GD -> BD : Buscar archivos asociados
+BD --> GD : Lista de documentos
+
+GD --> PC : Documentos encontrados
+PC --> Cliente : Mostrar documentos
+
+Cliente -> PC : Subir documento requerido
+PC -> GD : Validar y almacenar documento
+
+GD -> BD : Guardar documento
+BD --> GD : Confirmación de almacenamiento
+
+GD --> PC : Documento cargado correctamente
+PC --> Cliente : Notificación de éxito
+
+== Comunicación con abogado ==
+
+Cliente -> PC : Envía mensaje al abogado
+PC -> GC : Registrar comunicación
+
+GC -> BD : Guardar mensaje
+BD --> GC : Confirmación
+
+GC --> PC : Mensaje enviado
+PC --> Cliente : Confirmación de envío
+
+== Gestión administrativa ==
+
+Administrador -> PC : Accede al panel administrativo
+PC -> GC : Solicitar información de clientes
+
+GC -> BD : Consultar casos registrados
+BD --> GC : Información de casos
+
+GC --> PC : Mostrar datos de clientes
+PC --> Administrador : Panel actualizado
+
+Administrador -> PC : Actualizar estado del caso
+PC -> GC : Modificar estado
+
+GC -> BD : Guardar cambios
+BD --> GC : Confirmación
+
+GC --> PC : Estado actualizado
+PC --> Administrador : Notificación de éxito
+
+@enduml
