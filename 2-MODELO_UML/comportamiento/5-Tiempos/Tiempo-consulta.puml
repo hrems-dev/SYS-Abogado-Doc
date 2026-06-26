@@ -1,0 +1,19 @@
+@startuml
+title Tiempo - Consulta Legal
+
+robust Usuario
+robust Sistema
+
+@0
+Usuario is RegistrandoConsulta
+
+@10
+Sistema is GuardandoDatos
+
+@20
+Sistema is Procesando
+
+@30
+Usuario is RecibiendoConfirmacion
+
+@enduml

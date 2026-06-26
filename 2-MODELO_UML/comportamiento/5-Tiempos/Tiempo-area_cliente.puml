@@ -1,0 +1,28 @@
+@startuml areacliente
+title Tiempo - Área Cliente
+
+robust "Cliente" as C
+robust "Sistema" as S
+
+@0
+C is Offline
+S is Esperando
+
+@5
+C is Login
+S is Validando
+
+@10
+C is Conectado
+S is Procesando
+
+@20
+C is ConsultandoCaso
+
+@30
+S is Actualizando
+
+@40
+C is CerrandoSesion
+
+@enduml
