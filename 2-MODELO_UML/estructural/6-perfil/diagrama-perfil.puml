@@ -1,4 +1,4 @@
-@startuml
+    @startuml
 title Diagrama de Dominio - Sistema (Corregido)
 
 skinparam backgroundColor #1E1E1E
