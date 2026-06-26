@@ -1,0 +1,18 @@
+@startuml
+allowmixing
+
+title Comunicación - Sistema de Citas
+
+object Cliente
+object Frontend
+object API
+database DB
+
+Cliente -> Frontend : 1 Solicitar cita
+Frontend -> API : 2 Registrar cita
+API -> DB : 3 Guardar cita
+DB --> API : 4 Confirmación
+API --> Frontend : 5 OK
+Frontend --> Cliente : 6 Comprobante
+
+@enduml

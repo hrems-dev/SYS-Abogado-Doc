@@ -1,0 +1,188 @@
+@startuml
+title Diagrama de Dominio - Sistema (Corregido)
+
+skinparam backgroundColor #1E1E1E
+skinparam defaultFontColor #F5C542
+skinparam ArrowColor #D4A017
+skinparam classFontColor #F5C542
+skinparam classBorderColor #D4A017
+skinparam classBackgroundColor #2B2B2B
+skinparam classHeaderBackgroundColor #1E1E1E
+
+' =======================
+' ENUMS
+' =======================
+
+enum TipoUsuario {
+    CLIENTE
+    ABOGADO
+    ADMINISTRADOR
+}
+
+enum EstadoCaso {
+    ABIERTO
+    EN_PROCESO
+    PENDIENTE
+    RESUELTO
+    CERRADO
+    ARCHIVADO
+}
+
+enum EstadoCita {
+    SOLICITADA
+    CONFIRMADA
+    REPROGRAMADA
+    CANCELADA
+    COMPLETADA
+}
+
+enum ModalidadCita {
+    PRESENCIAL
+    VIRTUAL
+    TELEFONICA
+}
+
+enum TipoDocumento {
+    DNI
+    CARNET_EXTRANJERIA
+    PASAPORTE
+}
+
+enum TipoNotificacion {
+    EMAIL
+    SMS
+    PUSH
+    IN_APP
+}
+
+enum TipoPublicacion {
+    ARTICULO
+    NOTICIA
+    EVENTO
+    RECURSO
+}
+
+' =======================
+' BASE DOMAIN
+' =======================
+
+abstract class EntidadBase {
+    id: Long
+    fechaCreacion: Date
+    fechaActualizacion: Date
+}
+
+interface Auditable {
+    creadoPor: String
+    modificadoPor: String
+}
+
+interface SoftDeletable {
+    activo: Boolean
+    fechaEliminacion: Date
+}
+
+' =======================
+' ENTIDADES
+' =======================
+
+class Usuario {
+    nombre: String
+    email: String
+    tipo: TipoUsuario
+    tipoDocumento: TipoDocumento
+}
+
+class Caso {
+    titulo: String
+    descripcion: String
+    estado: EstadoCaso
+}
+
+class Cita {
+    fecha: Date
+    estado: EstadoCita
+    modalidad: ModalidadCita
+}
+
+class Consulta {
+    asunto: String
+    mensaje: String
+}
+
+class Publicacion {
+    titulo: String
+    contenido: String
+    tipo: TipoPublicacion
+}
+
+class Documento {
+    nombre: String
+    url: String
+}
+
+class Notificacion {
+    mensaje: String
+    tipo: TipoNotificacion
+}
+
+' =======================
+' DTOs
+' =======================
+
+class ApiResponse {
+    codigo: int
+    mensaje: String
+    datos: Object
+    errores: List<String>
+}
+
+class PageableResponse {
+    contenido: List
+    pagina: int
+    totalElementos: long
+    totalPaginas: int
+}
+
+' =======================
+' HERENCIA BASE
+' =======================
+
+EntidadBase <|-- Usuario
+EntidadBase <|-- Caso
+EntidadBase <|-- Cita
+EntidadBase <|-- Consulta
+EntidadBase <|-- Publicacion
+EntidadBase <|-- Documento
+EntidadBase <|-- Notificacion
+
+' =======================
+' INTERFACES
+' =======================
+
+Auditable <|.. Usuario
+Auditable <|.. Caso
+Auditable <|.. Publicacion
+
+SoftDeletable <|.. Usuario
+SoftDeletable <|.. Caso
+SoftDeletable <|.. Publicacion
+
+' =======================
+' NOTAS
+' =======================
+
+note right of EntidadBase
+Clase base del sistema
+end note
+
+note right of Auditable
+Permite auditoría
+de cambios
+end note
+
+note right of SoftDeletable
+Eliminación lógica
+end note
+
+@enduml

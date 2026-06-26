@@ -1,0 +1,38 @@
+@startuml
+allowmixing
+
+title Comunicación - Gestionar Perfil
+
+object Cliente
+object Administrador
+object Frontend
+object API
+object PerfilService
+database DB
+
+Cliente -> Frontend : 1 Solicitar perfil
+Frontend -> API : 2 GET /perfil
+API -> PerfilService : 3 Obtener datos
+PerfilService -> DB : 4 Consultar usuario
+DB --> PerfilService : 5 Datos del perfil
+PerfilService --> API : 6 Perfil encontrado
+API --> Frontend : 7 Información del perfil
+Frontend --> Cliente : 8 Mostrar perfil
+
+Cliente -> Frontend : 9 Editar datos
+Frontend -> API : 10 PUT /perfil
+API -> PerfilService : 11 Actualizar datos
+PerfilService -> DB : 12 Guardar cambios
+DB --> PerfilService : 13 Confirmación
+PerfilService --> API : 14 Actualización exitosa
+
+Administrador -> Frontend : 15 Gestionar usuarios
+Frontend -> API : 16 GET /usuarios
+API -> PerfilService : 17 Listar usuarios
+PerfilService -> DB : 18 Consultar todos
+DB --> PerfilService : 19 Lista de usuarios
+PerfilService --> API : 20 Datos de usuarios
+API --> Frontend : 21 Panel administración
+Frontend --> Administrador : 22 Usuarios del sistema
+
+@enduml
