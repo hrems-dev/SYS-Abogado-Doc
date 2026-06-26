@@ -1,0 +1,103 @@
+@startuml
+title Diagrama de Paquetes - Organización del Código
+
+skinparam backgroundColor #1E1E1E
+skinparam defaultFontColor #F5C542
+skinparam ArrowColor #D4A017
+skinparam packageFontColor #F5C542
+skinparam packageBorderColor #D4A017
+skinparam packageBackgroundColor #2B2B2B
+
+package "com.practica.sysabogado" as ROOT {
+    
+    package "presentation" as PRES {
+        [ControladorAuth]
+        [ControladorCitas]
+        [ControladorCasos]
+        [ControladorPerfil]
+        [ControladorPublicaciones]
+        [ControladorAdmin]
+    }
+    
+    package "service" as SERV {
+        [AuthService]
+        [CitaService]
+        [CasoService]
+        [ConsultaService]
+        [PerfilService]
+        [PublicacionService]
+        [NotificacionService]
+    }
+    
+    package "repository" as REPO {
+        [UsuarioRepository]
+        [CitaRepository]
+        [CasoRepository]
+        [ConsultaRepository]
+        [PublicacionRepository]
+        [DocumentoRepository]
+    }
+    
+    package "model" as MODEL {
+        [Usuario]
+        [Cliente]
+        [Abogado]
+        [Administrador]
+        [Cita]
+        [Caso]
+        [Consulta]
+        [Publicacion]
+        [Documento]
+        [Notificacion]
+    }
+    
+    package "security" as SEC {
+        [JwtProvider]
+        [JwtFilter]
+        [UserDetailsServiceImpl]
+        [SecurityConfig]
+    }
+    
+    package "config" as CFG {
+        [AppConfig]
+        [CorsConfig]
+        [SwaggerConfig]
+        [WebClientConfig]
+    }
+    
+    package "dto" as DTO {
+        [LoginRequest]
+        [LoginResponse]
+        [CitaRequest]
+        [CasoResponse]
+        [PerfilResponse]
+    }
+    
+    package "exception" as EXC {
+        [GlobalExceptionHandler]
+        [ResourceNotFoundException]
+        [BadRequestException]
+    }
+    
+    package "util" as UTIL {
+        [DateUtils]
+        [FileUtils]
+        [Constants]
+    }
+}
+
+PRES --> SERV : depende
+SERV --> REPO : utiliza
+SERV --> MODEL : mapea
+REPO --> MODEL : persiste
+SEC --> MODEL : referencia
+DTO --> MODEL : transfiere
+PRES --> DTO : expone
+PRES --> EXC : maneja
+SERV --> EXC : lanza
+SEC --> CFG : configura
+
+note top of ROOT : Organización en capas (Layered Architecture)
+note bottom of SEC : Seguridad con JWT + Spring Security
+
+@enduml
