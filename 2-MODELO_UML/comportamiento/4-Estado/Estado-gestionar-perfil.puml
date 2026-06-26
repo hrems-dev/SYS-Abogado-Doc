@@ -1,0 +1,33 @@
+@startuml
+title Estado - Gestionar Perfil
+
+skinparam backgroundColor #1E1E1E
+skinparam defaultFontColor #F5C542
+skinparam ArrowColor #D4A017
+
+[*] --> NoAutenticado
+NoAutenticado --> Autenticado : Iniciar sesión
+
+Autenticado --> VisualizandoPerfil : Ver perfil
+VisualizandoPerfil --> EditandoDatos : Editar datos
+VisualizandoPerfil --> CambiandoPassword : Cambiar contraseña
+VisualizandoPerfil --> ActualizandoFoto : Actualizar fotografía
+
+EditandoDatos --> ValidandoInformacion : Guardar cambios
+ValidandoInformacion --> Autenticado : Datos válidos
+ValidandoInformacion --> ErrorValidacion : Datos inválidos
+ErrorValidacion --> EditandoDatos : Corregir datos
+
+CambiandoPassword --> VerificandoPassword : Ingresar contraseña actual
+VerificandoPassword --> ActualizandoPassword : Contraseña correcta
+VerificandoPassword --> ErrorPassword : Contraseña incorrecta
+ErrorPassword --> CambiandoPassword : Reintentar
+ActualizandoPassword --> Autenticado : Contraseña actualizada
+
+ActualizandoFoto --> Autenticado : Foto actualizada
+
+Autenticado --> NoAutenticado : Cerrar sesión
+
+[*] <-- NoAutenticado
+
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+title Estado - Publicaciones
+
+[*] --> Borrador
+Borrador --> Editando
+Editando --> VistaPrevia
+VistaPrevia --> Publicado
+Publicado --> Archivado
+Archivado --> [*]
+
+@enduml

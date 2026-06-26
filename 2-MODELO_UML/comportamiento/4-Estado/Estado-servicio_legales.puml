@@ -1,0 +1,11 @@
+@startuml
+title Estado - Sistema Web Legal
+
+[*] --> Inicio
+Inicio --> Navegando
+Navegando --> SolicitandoCita
+SolicitandoCita --> Gestionando
+Gestionando --> Finalizado
+Finalizado --> [*]
+
+@enduml
