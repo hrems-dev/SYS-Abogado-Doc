@@ -1,0 +1,37 @@
+@startuml
+title SYS-SISTEMA-ABOGADO - Objeto: Área Cliente
+
+skinparam backgroundColor #1E1E1E
+skinparam ObjectBackgroundColor #2B2B2B
+skinparam ObjectBorderColor #D4A017
+skinparam ObjectFontColor #F5C542
+skinparam ArrowColor #D4A017
+skinparam defaultFontColor #F5C542
+
+object "Cliente" as cliente {
+  id = 1
+  nombre = "Juan Pérez"
+  dni = "12345678"
+  correo = "juan@gmail.com"
+}
+
+object "Cuenta" as cuenta {
+  usuario = "juanp"
+  estado = "Activo"
+}
+
+object "Caso" as caso {
+  codigo = "CAS-001"
+  estado = "En proceso"
+}
+
+object "Cita" as cita {
+  fecha = "20/06/2026"
+  hora = "10:00"
+}
+
+cliente -- cuenta
+cliente -- caso
+cliente -- cita
+
+@enduml

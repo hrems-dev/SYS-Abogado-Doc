@@ -1,0 +1,30 @@
+@startuml
+title SYS-SISTEMA-ABOGADO - Objeto: Publicación
+
+skinparam backgroundColor #1E1E1E
+skinparam ObjectBackgroundColor #2B2B2B
+skinparam ObjectBorderColor #D4A017
+skinparam ObjectFontColor #F5C542
+skinparam ArrowColor #D4A017
+skinparam defaultFontColor #F5C542
+
+object "Abogado" as abogado {
+  id = 8
+  nombre = "Dr. Carlos Soto"
+}
+
+object "Publicación" as publicacion {
+  id = 34
+  titulo = "Derechos laborales"
+  estado = "Publicada"
+}
+
+object "Categoría" as categoria {
+  id = 3
+  nombre = "Laboral"
+}
+
+abogado -- publicacion
+publicacion -- categoria
+
+@enduml
