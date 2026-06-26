@@ -6,21 +6,27 @@ En esta sección se documentan los diagramas de tiempos que muestran el comporta
 
 ### Líneas de Tiempo
 
-`Tiempo-area_cliente.puml` Área Cliente
-![Area Cliente] https://www.plantuml.com/plantuml/png/HOkzIWL134RxF4MulN3ziLyPx0I55Vkucok1x6IPP1exyStqnNISKSlldFDD7bIYRWeXeOoFmjjkU8QVxnzlXGcJ2kTWW6BFrGCF0noG7DCVdSM3D_gXCy1qX8JYU7ywgMI6kOrRtxbGNktRNtT_Po-IktqYbNNOyt5Fbda9Mgqd3yKMzj5S_3TUDHfDvCrS7dj-iqGbbTTnkFezS2aDpUnY6IREQztq2m00
-`Tiempo-citas.puml` Sistema de Citas
-!(https://www.plantuml.com/plantuml/uml/LO_12i8m44JlWVp3_e2WWlT2nPCdAzxJPgqBoMv9jlzlqbQXnvbviyiqMLtIEGPhb3GWF0dZ9720Zh9YTE0HMbANhR4cIJzdXJOGik9VRsWbcgCrMmoKuIuZyU9VTdw70OU1X1rxkU7mMSkdqlxzBTJB1VALk5AUXAcdglsAxW-smczAiS9BVDvVUk1OHAfn7RCWoBxi_W80)
+#### `Tiempo-area_cliente.puml` — Área Cliente
 
-| `Tiempo-consulta.puml` Consulta Legal
-![Ver diagrama](https://www.plantuml.com/plantuml/uml/NSzB2W8n30RWVM7ka0i8FYumeE36XVWuGAOJXy2qaIQzlsqT1Lqc_vU4z6gOB8UvSyOs4zoOmbDW1Nk9ccT3ED649UvSaY6hmLqp9fPlVMKr2bX5l-xS4WChN6WgMS8uocTRKvl2bgdAZcLWhEY09jh4zbUSatZIIbgw-p_ZUM1wNtbm2kXPOfEbMNvx0G00)
+![Área Cliente](https://www.plantuml.com/plantuml/png/HOkzIWL134RxF4MulN3ziLyPx0I55Vkucok1x6IPP1exyStqnNISKSlldFDD7bIYRWeXeOoFmjjkU8QVxnzlXGcJ2kTWW6BFrGCF0noG7DCVdSM3D_gXCy1qX8JYU7ywgMI6kOrRtxbGNktRNtT_Po-IktqYbNNOyt5Fbda9Mgqd3yKMzj5S_3TUDHfDvCrS7dj-iqGbbTTnkFezS2aDpUnY6IREQztq2m00)
 
-`Tiempo-publicacion.puml` Publicaciones
-![Ver diagrama](https://www.plantuml.com/plantuml/uml/NOzR3W8X34N_ITW36p3niO4nim6Ynl_2DAO9K0DbrYyuQAAVpJczjvsAG9OQWrP24j3S2EEJpSxOwW9vyCG9YrPQPNQrY3axVi32t_bAHJ12DwQzLWCRAcRE2AcRZHmQ6cP7DhF7qkdCIJ3Hq8w_2HTSwMtTsohOtCQjwFGNjztwASEqj8zU)
+#### `Tiempo-citas.puml` — Sistema de Citas
 
-`Tiempo-servicio_legales.puml` | Sistema Web Legal
-![Ver diagrama](https://www.plantuml.com/plantuml/uml/NOzD2W8n34Rt0tE7N43mvm8ZBjoecugkEpP8ODf8avdpcnOjw2eaxoKV6KHzrZbEVQUa4yALCBuOLk185AE7EuvmmgSte-yoZxCet4X8VL9iau_T-ds8bCh6iEwxfWC9NFnYrrBWIZU6lqa6pooQ2tIO5teGIxMs_qSSJqQrc0ShLTgPL6EBS4HHulGZO0hsw1i0) |
+![Sistema de Citas](https://www.plantuml.com/plantuml/png/LOx1gi9034Nt-Ohym8C-mNsXuigL5VVJJgo1cQJCfFzl0oFOvRtdv9A-MYYsvGJ6bWWVJ7bL_CEHgr4E60a7jb01YavRDHmIanYr-FK0-WuQGgvuquLbBy-_vKY9vfbLWaIzqlpsi_yEseOhpv0uEhvmNLLuOi_HlSFKeFBYajtSsUcmSQTb3yMPlmuzITno-W00)
 
-### Eventos Temporales
+#### `Tiempo-consulta.puml` — Consulta Legal
+
+![Consulta Legal](https://www.plantuml.com/plantuml/png/NSnD2i9038RXVKwH2mXLBr1GSED2_3b0siOIc6aaoTpV6QmBNIRFozTxa4N92K8YCTw5yqjnWmTTlAGWFFDC2S1qA1xuy48c-Zrlui6P0FeELa9nlF9SmMYPTDrfoRQ3jM_DgTPJAuuKwfLtFtmn7TcRLzh_hOyo27_6dsAPHj45-lefERq1)
+
+#### `Tiempo-publicacion.puml` — Publicaciones
+
+![Publicaciones](https://www.plantuml.com/plantuml/png/LOxH3S8m34J_FOKNG2gmG50Ng03nxxOMijJ4A7QOdwGA7_qytxlp1NFANk86BhunFeNZH_64KvatMMWHJMm0MUTYZhTPtxJgNpx4d2C1X06wXM8uPgPKAGZd0JhJxbFMXQrPeoRd93jpEMJl_9KTUTKSJRdArdyz5FLnxKVWjDRvFm00)
+
+#### `Tiempo-servicio_legales.puml` — Sistema Web Legal
+
+![Sistema Web Legal](https://www.plantuml.com/plantuml/png/NOyn3i8m34Ltdy8NG2fmWI865c0fWZab5hAKn2XsUtvSH3emHJ_l-LlkrKArAISmjaHuOyflmGqEh4Ovu8D6FDCh980guwI6TrQsK8pQnqzjyH0p5u2-WzL4Lho6sMjA54VR3bg_aukerOKCL6T-igWhkx_nGP8ZZr6E_hYnx-2xQg4dKcCfA-sfH3_g0m00)
+
+## Eventos Temporales
 
 - Área Cliente: login, conexión, consulta de caso, actualización y cierre de sesión.
 - Sistema de Citas: selección de fecha, validación de disponibilidad, confirmación y registro.
@@ -30,4 +36,4 @@ En esta sección se documentan los diagramas de tiempos que muestran el comporta
 
 ## Nota
 
-- Este contenido se incluye dentro de `index.md` mediante Jekyll.
+Este contenido se incluye dentro de `index.md` mediante Jekyll.
