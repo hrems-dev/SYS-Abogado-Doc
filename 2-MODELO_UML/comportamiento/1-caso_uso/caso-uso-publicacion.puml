@@ -1,4 +1,7 @@
-@startuml
+@startuml Modulo_05_Publicaciones
+title Sistema SYS-SISTEMA-ABOGADO\nUC-05: Gestionar Publicaciones
+
+left to right direction
 
 skinparam backgroundColor #1E1E1E
 skinparam packageStyle folder
@@ -8,6 +11,7 @@ skinparam actorStyle awesome
 skinparam package {
     BackgroundColor #1E1E1E
     BorderColor #D4A017
+    RoundColor #D4A017
     RoundCorner 10
 }
 
@@ -18,105 +22,44 @@ skinparam usecase {
     ArrowColor #D4A017
 }
 
-skinparam rectangle {
-    BackgroundColor #1E1E1E
+skinparam actor {
+    FontColor #F5C542
     BorderColor #D4A017
-    RoundCorner 10
 }
 
 skinparam ArrowColor #D4A017
 skinparam defaultFontColor #F5C542
 
-left to right direction
+actor "Abogado" as A
 
-actor Abogado
+package "Sistema SYS-SISTEMA-ABOGADO" {
 
-rectangle "Sistema Web de Publicaciones" {
-
-  usecase "Iniciar Sesión" as UC1
-  usecase "Crear Publicación" as UC2
-  usecase "Escribir Texto" as UC3
-  usecase "Subir Imagen" as UC4
-  usecase "Visualizar Vista Previa" as UC5
-  usecase "Publicar Contenido" as UC6
-  usecase "Editar Publicación" as UC7
-  usecase "Eliminar Publicación" as UC8
+    usecase "Iniciar\nSesión" as UC1
+    usecase "Crear\nPublicación" as UC2
+    usecase "Escribir\nTexto" as UC3
+    usecase "Subir\nImagen" as UC4
+    usecase "Visualizar\nVista Previa" as UC5
+    usecase "Publicar\nContenido" as UC6
+    usecase "Editar\nPublicación" as UC7
+    usecase "Eliminar\nPublicación" as UC8
 
 }
 
-Abogado -- UC1
-Abogado -- UC2
-Abogado -- UC7
-Abogado -- UC8
+A --> UC1
+A --> UC2
+A --> UC7
+A --> UC8
 
 UC2 .> UC3 : <<include>>
 UC2 .> UC4 : <<include>>
 UC2 .> UC5 : <<include>>
 UC2 .> UC6 : <<include>>
 
-@enduml@startuml Modulo_06_Gestionar_Perfil
-       title Sistema SYS-SISTEMA-ABOGADO\nUC-06: Gestionar Perfil
+legend right
+  |<#D4A017> Actor Primario |
+  |<#F5C542> Casos de Uso |
+  |<#2B2B2B> Relación Include |
+  |-- Abogado: Gestiona las publicaciones |
+endlegend
 
-       left to right direction
-
-       skinparam backgroundColor #1E1E1E
-       skinparam packageStyle folder
-       skinparam shadowing false
-       skinparam actorStyle awesome
-
-       skinparam package {
-           BackgroundColor #1E1E1E
-           BorderColor #D4A017
-           RoundColor #D4A017
-           RoundCorner 10
-       }
-
-       skinparam usecase {
-           BackgroundColor #2B2B2B
-           BorderColor #D4A017
-           FontColor #F5C542
-           ArrowColor #D4A017
-       }
-
-       skinparam actor {
-           FontColor #F5C542
-           BorderColor #D4A017
-       }
-
-       skinparam ArrowColor #D4A017
-       skinparam defaultFontColor #F5C542
-
-       actor "Cliente" as C
-       actor "Administrador" as A
-
-       package "Sistema SYS-SISTEMA-ABOGADO" {
-
-           usecase "Visualizar\n perfil" as UC1
-           usecase "Editar datos\n personales" as UC2
-           usecase "Cambiar\n contraseña" as UC3
-           usecase "Actualizar\n fotografía" as UC4
-           usecase "Validar\n información" as UC5
-           usecase "Administrar\n usuarios" as UC6
-
-       }
-
-       C --> UC1
-       C --> UC2
-       C --> UC3
-       C --> UC4
-
-       A --> UC6
-
-       UC2 .> UC5 : <<include>>
-       UC3 .> UC5 : <<include>>
-       UC4 .> UC5 : <<include>>
-
-       legend right
-         |<#D4A017> Actor Primario |
-         |<#F5C542> Casos de Uso |
-         |<#2B2B2B> Relación Include |
-         |-- Cliente: Usuario del sistema |
-         |-- Administrador: Gestor del sistema |
-       endlegend
-
-       @enduml
+@enduml
